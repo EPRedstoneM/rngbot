@@ -23,4 +23,13 @@ client.on('message', message => {
   }
 })
 
+client.on('message', message => {
+  if (message.content === 'r!help') {
+    const embed = new Discord.MessageEmbed()
+    .setAuthor('RNG Bot - Help')
+    .setDescription('Hello! To get a random number, use r!random <max>')
+    message.channel.send(embed)
+  }
+})
+
 client.login(process.env.TOKEN)
